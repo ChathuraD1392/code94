@@ -8,11 +8,18 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+// CreateHandler handles the HTTP POST request to create a new post.
+// It parses the request body to obtain the post data, validates it,
+// and then attempts to create a new post using the post service.
+// If the post is created successfully, it returns a success message with the post's ID;
+// otherwise, it returns an error message indicating the failure.
 func CreateHandler(ctr domain.Container) fiber.Handler {
 	return func(ctx *fiber.Ctx) error {
 		logger := fiberutils.GetLogger(ctx)
+		// Create a post service instance using the container and logger.
 		postService := domain.NewPostService(ctr, logger)
 
+		// Parse the request body to get the post data.
 		var post models.Post
 		if err := ctx.BodyParser(&post); err != nil {
 			logger.Error().Str("error", err.Error()).Msg("failed to parse request body.")
@@ -20,6 +27,8 @@ func CreateHandler(ctr domain.Container) fiber.Handler {
 				"error": "invalid request body",
 			})
 		}
+
+		// Call the service to create the post.
 		err := postService.Create(ctx.Context(), &post)
 		if err != nil {
 			logger.Error().Str("error", err.Error()).Msg("failed to create post")

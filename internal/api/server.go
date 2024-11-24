@@ -12,6 +12,7 @@ import (
 	"github.com/rs/zerolog"
 )
 
+// InitServer initializes and starts the Fiber server with the provided configuration, logger, and container dependencies.
 func InitServer(cfg config.App, logger zerolog.Logger, cntr domain.Container) error {
 	app := fiber.New()
 	app.Use(

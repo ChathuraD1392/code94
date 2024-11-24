@@ -7,14 +7,17 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// App represents the root application configuration structure.
 type App struct {
-	Server Server `yaml:"server"`
+	Server Server `yaml:"server"` // Server configuration section.
 }
 
+// Server represents the server-specific configuration settings.
 type Server struct {
-	Port int `yaml:"port"`
+	Port int `yaml:"port"` // Port on which the server will run.
 }
 
+// LoadConfig loads the application configuration from a YAML file specified by an environment variable.
 func LoadConfig(envVar string, defaultConfig App) (App, error) {
 	filePath := os.Getenv(envVar)
 	if filePath == "" {

@@ -2,6 +2,7 @@ package models
 
 import "time"
 
+// create model for a comment
 type Comment struct {
 	Id        uint      `json:"id"`
 	Content   string    `json:"content"`
