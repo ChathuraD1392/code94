@@ -1,6 +1,6 @@
 # code94
 
-Mini Social Media API
+###Mini Social Media API
 Core Functionality:
 Create new posts (posts will just be a text message) > POST posts
 Update posts > PUT posts/{id}
