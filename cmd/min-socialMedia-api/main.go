@@ -22,7 +22,7 @@ func main() {
 	logger := zerolog.New(os.Stdout)
 	defaultConfig := config.App{
 		Server: config.Server{
-			Port: 8082,
+			Port: 8080,
 		},
 	}
 	cfg, err := config.LoadConfig(configPathEnv, defaultConfig)
