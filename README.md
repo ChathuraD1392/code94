@@ -1,6 +1,6 @@
 # Mini Social Media API
 
-##1. Solution:
+## 1. Solution:
 While maintaining the guidelines for good coding practice in Golang, I created and implemented a clean API responsible for the posts of a mini social media application. The implementation respects the standard practices in Golang programming and makes use of a clean architecture of a modular package design.
 
 The critical aspects of the solution include:
@@ -57,11 +57,11 @@ go run main.go
 
 > Note: You can find the API collection in the `docs` directory.
 
-##3.Assumptions
+## 3.Assumptions
 Authentication level: Use of a login and password is not required on the platform when creating posts.
 Anonymous Posts: The feature allows creating posts anonymously not tagging them to a specific member.
 
-##4.Possible Improvments
+## 4.Possible Improvments
 
 Adding security features to authenticate posts with registered users is important as it prevents data manipulation.
 Use technologies such as OAuth2, JWT or session-based authentication which best suit the application.
